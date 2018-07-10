@@ -1,0 +1,86 @@
+@main-color: #F7F7F7;
+@sidebar-color: #eeeeee;
+@font-primary-color : #3e3d3d;
+@font-secondary-color : #f7f7f7;
+@border-bottom : 1px solid #E0E0E0;
+body {
+    
+    color: @font-primary-color;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    
+    /*header*/
+    .header {
+        height: 50px;
+        background: @main-color;
+        border-bottom: @border-bottom;
+        position: fixed;
+        width: 100%;
+        z-index: 105;
+        .profile-menu {
+            padding: 0;
+            display: inline-block;
+
+            .profile {
+                color: white;
+            }
+        }
+        .logo {
+            background-color: @sidebar-color;
+            text-decoration: none;
+            color: #00A185;
+            display: inline-block;
+            height: 50px;
+            width: 180px;
+            padding-top: 15px;
+            padding-left: 15px;
+            img {
+                height: 20px;
+            }
+        }
+
+    }
+    
+    
+    /*sidebar left*/
+    .sidebar-left {
+        background: @sidebar-color;
+        position: absolute;
+        width: 180px;
+        z-index: 11;
+        min-height: calc(100%);
+        overflow: auto !important;
+        padding-top: 50px;
+      
+        /*sidebar nav*/
+        ul {
+            color: #985a5a;
+//            text-shadow: 1px 1px #808080;
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 100%;
+            li {
+                list-style: none;
+                padding: 10px;
+                transition: .3s ease-in-out;
+            }
+            li:hover {
+                background: @main-color;
+                
+            }
+        }
+        .line-pink { border-right: 4px solid pink}
+    }
+    
+}
+hr {
+    margin: 0;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
+    background-image:    -moz-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
+    background-image:     -ms-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
+    background-image:      -o-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
+}
