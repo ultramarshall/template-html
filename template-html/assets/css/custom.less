@@ -4,12 +4,10 @@
 @font-secondary-color : #f7f7f7;
 @border-bottom : 1px solid #E0E0E0;
 body {
-    
     color: @font-primary-color;
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     font-weight: 500;
-    
     /*header*/
     .header {
         height: 50px;
@@ -21,7 +19,6 @@ body {
         .profile-menu {
             padding: 0;
             display: inline-block;
-
             .profile {
                 color: white;
             }
@@ -35,14 +32,14 @@ body {
             width: 180px;
             padding-top: 15px;
             padding-left: 15px;
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
             img {
                 height: 20px;
             }
         }
-
     }
-    
-    
     /*sidebar left*/
     .sidebar-left {
         background: @sidebar-color;
@@ -52,35 +49,66 @@ body {
         min-height: calc(100%);
         overflow: auto !important;
         padding-top: 50px;
-      
-        /*sidebar nav*/
-        ul {
-            color: #985a5a;
-//            text-shadow: 1px 1px #808080;
-            margin: 0;
-            padding: 0;
-            display: block;
+        span {
+            display: inline-block;
+            text-decoration: none;
             width: 100%;
-            li {
-                list-style: none;
-                padding: 10px;
-                transition: .3s ease-in-out;
+            padding: 0;
+            label {
+                width: 100%;
+                padding: 0;
+                padding-left: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin: 0;
             }
-            li:hover {
-                background: @main-color;
-                
+            input[type=checkbox] {
+                display: none;
+                position: absolute;
+                top: -9999px;
+            }
+            input[type=checkbox]:checked~.menu-child {
+                max-height: 9999px;
+                transition: max-height 1s;
+            }
+            input[type=checkbox]:checked~.menu-parent {
+                background: red;
+            }
+            .menu-child {
+                padding: 0;
+                padding-left: 10px;
+                margin: 0;
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height .5s;
             }
         }
-        .line-pink { border-right: 4px solid pink}
     }
-    
+    .content {
+        position: absolute;
+        width: 100%;
+        padding-left: 180px;
+        padding-top: 50px;
+        height: calc(100%);
+        .sidebar-mode {
+            width: 0;
+            height: 0;
+            border-top: 50px solid #333;
+            border-right: 50px solid transparent;
+            padding-top: -30px;
+            color: blue;
+        }
+    }
 }
 hr {
     margin: 0;
     border: 0;
     height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
-    background-image:    -moz-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
-    background-image:     -ms-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
-    background-image:      -o-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18)); 
+    background-image: -webkit-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18));
+    background-image: -moz-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18));
+    background-image: -ms-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18));
+    background-image: -o-linear-gradient(left, rgba(224, 224, 224, 0.18), #E0E0E0, rgba(224, 224, 224, 0.18));
+}
+.line-pink {
+    border-right: 4px solid pink;
 }
